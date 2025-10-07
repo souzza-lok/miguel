@@ -13,7 +13,7 @@ body {
     border-radius: 10px;
     padding: 20px;
     box-shadow:
-        0 0 30px 10px #4CAF50, /* brilho verde suave */
+        0 0 30px 10px #9900ff, /* brilho verde suave */
         0 10px 20px rgba(0, 0, 0, 0.5); /* sombra original */
     width: 300px; /* Largura fixa para uma calculadora compacta */
     transition: box-shadow 0.3s;
