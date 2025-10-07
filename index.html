@@ -3,18 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Máquina do Tempo Tecnológica</title>
+    <title>Calculadora Teclado</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="calculadora">
+        <input type="text" class="visor" id="visor" value="" disabled>
 
-    <div class="container">
-        <h1>Máquina do Tempo Tecnológica</h1>
-        <p>Clique no objeto para viajar no tempo!</p>
-        <div id="objeto-container">
-            <img id="objeto" src="smartphone-antigo.png" alt="Smartphone Antigo">
+        <div class="teclado">
+            <button class="operador" id="clear" data-key="c">C</button>
+            <button class="operador" id="backspace" data-key="Backspace">⌫</button>
+            <button class="operador" data-key="%">%</button>
+            <button class="operador" data-key="/">÷</button>
+
+            <button class="numero" data-key="7">7</button>
+            <button class="numero" data-key="8">8</button>
+            <button class="numero" data-key="9">9</button>
+            <button class="operador" data-key="*">×</button>
+
+            <button class="numero" data-key="4">4</button>
+            <button class="numero" data-key="5">5</button>
+            <button class="numero" data-key="6">6</button>
+            <button class="operador" data-key="-">-</button>
+
+            <button class="numero" data-key="1">1</button>
+            <button class="numero" data-key="2">2</button>
+            <button class="numero" data-key="3">3</button>
+            <button class="operador" data-key="+">+</button>
+
+            <button class="numero zero" data-key="0">0</button>
+            <button class="numero" data-key=".">.</button>
+            <button class="igual" id="calcular" data-key="Enter">=</button>
         </div>
-        <h2 id="titulo-objeto">Smartphone Antigo</h2>
     </div>
 
     <script src="script.js"></script>

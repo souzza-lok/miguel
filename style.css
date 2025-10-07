@@ -1,74 +1,80 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0d1117;
-    color: #e6edf3;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    text-align: center;
-    overflow: hidden;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
 }
 
-.container {
+.calculadora {
+    background-color: #000000;
+    border-radius: 10px;
     padding: 20px;
-    background: rgba(199, 49, 49, 0.74);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease-in-out;
+    box-shadow:
+        0 0 30px 10px #4CAF50, /* brilho verde suave */
+        0 10px 20px rgba(0, 0, 0, 0.5); /* sombra original */
+    width: 300px; /* Largura fixa para uma calculadora compacta */
+    transition: box-shadow 0.3s;
 }
 
-h1 {
+.visor {
+    width: calc(100% - 10px);
+    height: 60px;
+    background-color: #555;
+    color: #fff;
     font-size: 2.5em;
-    color: #79c0ff;
+    text-align: right;
+    border: none;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
-p {
-    font-size: 1.2em;
-    margin-top: 10px;
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
-#objeto-container {
-    width: 250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto;
-}
-
-#objeto {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out;
-}
-
-#objeto:hover {
-    transform: scale(1.05);
-}
-
-h2#titulo-objeto {
+button {
+    height: 60px;
+    border: none;
+    border-radius: 5px;
     font-size: 1.5em;
-    color: #c9d1d9;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+button:active {
+    filter: brightness(0.8);
 }
 
-/* Animação para a transformação */
-.transform-anim {
-    animation: transformPulse 0.5s forwards;
+.numero {
+    background-color: #666;
+    color: white;
 }
 
-@keyframes transformPulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+.operador {
+    background-color: #ff0000;
+    color: rgb(0, 0, 0);
+}
+
+.igual {
+    background-color: #4CAF50;
+    color: white;
+    grid-column: span 2; /* O botão de igual ocupa 2 colunas */
+}
+
+/* Ajuste para o botão zero */
+.zero {
+    grid-column: span 2;
+}
+
+/* Estilo para a tecla pressionada */
+.active-key {
+    border: 3px solid #fff !important; 
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
 }
